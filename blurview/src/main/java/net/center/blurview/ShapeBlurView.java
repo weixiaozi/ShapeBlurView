@@ -452,7 +452,7 @@ public class ShapeBlurView extends View {
                     return false;
                 }
                 r = true;
-            } catch (OutOfMemoryError e) {
+            } catch (Throwable e) {
                 // Bitmap.createBitmap() may cause OOM error
                 // Simply ignore and fallback
             } finally {
@@ -504,7 +504,7 @@ public class ShapeBlurView extends View {
                         decor.getBackground().draw(mBlurringCanvas);
                     }
                     decor.draw(mBlurringCanvas);
-                } catch (StopException e) {
+                } catch (Throwable e) {
                 } finally {
                     mIsRendering = false;
                     RENDERING_COUNT--;
