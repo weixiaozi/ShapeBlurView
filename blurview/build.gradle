@@ -7,11 +7,6 @@ plugins {
 }
 
 //https://blog.csdn.net/java04/article/details/123574708
-def properties = new Properties()
-properties.load(rootProject.file("local.properties").newInputStream())
-//def gitUser = properties.getProperty("gitUser")
-//def gitPassWord = properties.getProperty("gitPassWord")
-//println 'gitUser=' + gitUser+"gitPassWord="+gitPassWord
 
 afterEvaluate {
     publishing {
@@ -20,7 +15,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.weixiaozi'//插件id，格式：com.gitee/github.用户名
                 artifactId = 'ShapeBlurView'//插件名称
-                version = '1.0.5.1'//版本号
+                version = '1.0.5.2'//版本号
                 //引用使用格式：implementation 'com.github.weixiaozi:ShapeBlurView:1.0.0'
             }
         }
